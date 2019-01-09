@@ -5,7 +5,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.exporters import CsvItemExporter
 from opensuse_mail.items import MailItem
 
-datadir= '/opt/scrapyd/'
+datadir= '/opt/scrapyd/datadir/'
 year = '2019'
 
 class BugsSpider(CrawlSpider):
@@ -26,7 +26,7 @@ class BugsSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-bugs/'+year+'-12/all.html'
     ]
     custom_settings = {
-        'FEED_URI': 'file://'+datadir+'opensuse-bugs/results/opensuse-bugs-'+year+'.json',
+        'FEED_URI': 'file://'+datadir+'opensuse-bugs/opensuse-bugs-'+year+'.json',
         'JOBDIR': datadir+'opensuse-bugs/jobs/'
     }
     rules = (
@@ -114,7 +114,7 @@ class UpdatesSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-updates/'+year+'-12/all.html'
     ]    
     custom_settings = {
-        'FEED_URI': 'file://'+datadir+'opensuse-updates/results/opensuse-updates-'+year+'.json',
+        'FEED_URI': 'file://'+datadir+'opensuse-updates/opensuse-updates-'+year+'.json',
         'JOBDIR': datadir+'opensuse-updates/jobs/'
     }
     rules = (
@@ -158,7 +158,7 @@ class SecuritySpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-security-announce/'+year+'-12/all.html'
     ]    
     custom_settings = {
-        'FEED_URI': 'file://'+datadir+'opensuse-security/results/opensuse-security-'+year+'.json',
+        'FEED_URI': 'file://'+datadir+'opensuse-security/opensuse-security-'+year+'.json',
         'JOBDIR': datadir+'opensuse-security/jobs/'
     }
     rules = (
