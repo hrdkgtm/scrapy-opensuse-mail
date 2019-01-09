@@ -26,7 +26,7 @@ class BugsSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-bugs/'+year+'-12/all.html'
     ]
     custom_settings = {
-        'FEED_URI': 'file://'+datadir+'opensuse-bugs/results/opensuse-bugs.json',
+        'FEED_URI': 'file://'+datadir+'opensuse-bugs/results/opensuse-bugs-'+year+'.json',
         'JOBDIR': datadir+'opensuse-bugs/jobs/'
     }
     rules = (
@@ -70,7 +70,7 @@ class AnnounceSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-announce/'+year+'-12/all.html'
     ]    
     custom_settings = {
-        'FEED_URI': 'file://'+datadir+'opensuse-announce/opensuse-announce.json',
+        'FEED_URI': 'file://'+datadir+'opensuse-announce/opensuse-announce-'+year+'.json',
         'JOBDIR': datadir+'opensuse-announce/jobs/'
     }
     rules = (
@@ -114,7 +114,7 @@ class UpdatesSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-updates/'+year+'-12/all.html'
     ]    
     custom_settings = {
-        'FEED_URI': 'file://'+datadir+'opensuse-updates/results/opensuse-updates.json',
+        'FEED_URI': 'file://'+datadir+'opensuse-updates/results/opensuse-updates-'+year+'.json',
         'JOBDIR': datadir+'opensuse-updates/jobs/'
     }
     rules = (
@@ -158,7 +158,7 @@ class SecuritySpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-security-announce/'+year+'-12/all.html'
     ]    
     custom_settings = {
-        'FEED_URI': 'file://'+datadir+'opensuse-security/results/opensuse-security.json',
+        'FEED_URI': 'file://'+datadir+'opensuse-security/results/opensuse-security-'+year+'.json',
         'JOBDIR': datadir+'opensuse-security/jobs/'
     }
     rules = (
