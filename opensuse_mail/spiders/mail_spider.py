@@ -5,6 +5,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.exporters import CsvItemExporter
 from opensuse_mail.items import MailItem
 
+datadir= '/opt/scrapyd/'
 year = '2019'
 
 class BugsSpider(CrawlSpider):
@@ -25,15 +26,15 @@ class BugsSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-bugs/'+year+'-12/all.html',
     ]
     custom_settings = {
-        'FEED_URI': 'file:///opt/scrapyd/opensuse-bugs/results/opensuse-bugs.json',
-        'JOBDIR': '/opt/scrapyd/opensuse-bugs/jobs/'
+        'FEED_URI': 'file://'+datadir+'opensuse-bugs/results/opensuse-bugs.json',
+        'JOBDIR': datadir+'opensuse-bugs/jobs/'
     }
     rules = (
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and followed
         #Rule(LinkExtractor(allow=('opensuse\-bugs/2018\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False)),
         #Rule(LinkExtractor(allow=('opensuse\-bugs/2019\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False), follow=True),
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and thrown to the callback function
-        Rule(LinkExtractor(allow=('/msg\d{5}\.html', )), callback='parse_item', follow=False),
+        Rule(LinkExtractor(allow=('msg\d{5}\.html', )), callback='parse_item', follow=False),
     )
 
     def parse_item(self, response):
@@ -69,15 +70,15 @@ class AnnounceSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-announce/'+year+'-12/all.html',
     ]    
     custom_settings = {
-        'FEED_URI': 'file:///opt/scrapyd/opensuse-announce/results/opensuse-announce.json',
-        'JOBDIR': '/opt/scrapyd/opensuse-announce/jobs/'
+        'FEED_URI': 'file://'+datadir+'opensuse-announce/opensuse-announce.json',
+        'JOBDIR': datadir+'opensuse-announce/jobs/'
     }
     rules = (
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and followed
         #Rule(LinkExtractor(allow=('opensuse\-announce\/2018\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False)),
         #Rule(LinkExtractor(allow=('opensuse\-announce/2019\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False)),
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and thrown to the callback function
-        Rule(LinkExtractor(allow=('opensuse\-announce\/2018\-\d{2}\/msg\d{5}\.html', )), callback='parse_item'),
+        Rule(LinkExtractor(allow=('msg\d{5}\.html', )), callback='parse_item', follow=False),
     )
 
     def parse_item(self, response):
@@ -113,15 +114,15 @@ class UpdatesSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-updates/'+year+'-12/all.html',
     ]    
     custom_settings = {
-        'FEED_URI': 'file:///opt/scrapyd/opensuse-updates/results/opensuse-updates.json',
-        'JOBDIR': '/opt/scrapyd/opensuse-updates/jobs/'
+        'FEED_URI': 'file://'+datadir+'opensuse-updates/results/opensuse-updates.json',
+        'JOBDIR': datadir+'opensuse-updates/jobs/'
     }
     rules = (
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and followed
         #Rule(LinkExtractor(allow=('opensuse\-updates/2018\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False)),
         #Rule(LinkExtractor(allow=('opensuse\-updates/2019\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False)),
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and thrown to the callback function
-        Rule(LinkExtractor(allow=('opensuse\-updates/2018\-\d{2}/msg\d{5}\.html', )), callback='parse_item'),
+        Rule(LinkExtractor(allow=('msg\d{5}\.html', )), callback='parse_item', follow=False),
     )
 
     def parse_item(self, response):
@@ -157,15 +158,15 @@ class SecuritySpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-security-announce/'+year+'-12/all.html',
     ]    
     custom_settings = {
-        'FEED_URI': 'file:///opt/scrapyd/opensuse-security/results/opensuse-security.json',
-        'JOBDIR': '/opt/scrapyd/opensuse-security/jobs/'
+        'FEED_URI': 'file://'+datadir+'opensuse-security/results/opensuse-security.json',
+        'JOBDIR': datadir+'opensuse-security/jobs/'
     }
     rules = (
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and followed
         #Rule(LinkExtractor(allow=('opensuse\-security\-announce/2018\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False)),
         #Rule(LinkExtractor(allow=('opensuse\-security\-announce/2019\-\d{2}', ), deny=('msg\d{5}\.html', ), unique=False)),
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and thrown to the callback function
-        Rule(LinkExtractor(allow=('opensuse\-security\-announce/2018\-\d{2}/msg\d{5}\.html', )), callback='parse_item'),
+        Rule(LinkExtractor(allow=('msg\d{5}\.html', )), callback='parse_item', follow=False),
     )
 
     def parse_item(self, response):
