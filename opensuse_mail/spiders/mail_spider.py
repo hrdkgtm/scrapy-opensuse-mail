@@ -23,7 +23,7 @@ class BugsSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-bugs/'+year+'-09/all.html',
         'https://lists.opensuse.org/opensuse-bugs/'+year+'-10/all.html',
         'https://lists.opensuse.org/opensuse-bugs/'+year+'-11/all.html',
-        'https://lists.opensuse.org/opensuse-bugs/'+year+'-12/all.html',
+        'https://lists.opensuse.org/opensuse-bugs/'+year+'-12/all.html'
     ]
     custom_settings = {
         'FEED_URI': 'file://'+datadir+'opensuse-bugs/results/opensuse-bugs.json',
@@ -67,7 +67,7 @@ class AnnounceSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-announce/'+year+'-09/all.html',
         'https://lists.opensuse.org/opensuse-announce/'+year+'-10/all.html',
         'https://lists.opensuse.org/opensuse-announce/'+year+'-11/all.html',
-        'https://lists.opensuse.org/opensuse-announce/'+year+'-12/all.html',
+        'https://lists.opensuse.org/opensuse-announce/'+year+'-12/all.html'
     ]    
     custom_settings = {
         'FEED_URI': 'file://'+datadir+'opensuse-announce/opensuse-announce.json',
@@ -111,7 +111,7 @@ class UpdatesSpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-updates/'+year+'-09/all.html',
         'https://lists.opensuse.org/opensuse-updates/'+year+'-10/all.html',
         'https://lists.opensuse.org/opensuse-updates/'+year+'-11/all.html',
-        'https://lists.opensuse.org/opensuse-updates/'+year+'-12/all.html',
+        'https://lists.opensuse.org/opensuse-updates/'+year+'-12/all.html'
     ]    
     custom_settings = {
         'FEED_URI': 'file://'+datadir+'opensuse-updates/results/opensuse-updates.json',
@@ -155,7 +155,7 @@ class SecuritySpider(CrawlSpider):
         'https://lists.opensuse.org/opensuse-security-announce/'+year+'-09/all.html',
         'https://lists.opensuse.org/opensuse-security-announce/'+year+'-10/all.html',
         'https://lists.opensuse.org/opensuse-security-announce/'+year+'-11/all.html',
-        'https://lists.opensuse.org/opensuse-security-announce/'+year+'-12/all.html',
+        'https://lists.opensuse.org/opensuse-security-announce/'+year+'-12/all.html'
     ]    
     custom_settings = {
         'FEED_URI': 'file://'+datadir+'opensuse-security/results/opensuse-security.json',
