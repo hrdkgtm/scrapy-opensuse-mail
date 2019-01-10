@@ -12,9 +12,6 @@ class OpensuseMailCrawler(CrawlSpider):
         self.start_urls = ['https://lists.opensuse.org/'+ category +'/'+ date +'/all.html']
 
     allowed_domains = ['lists.opensuse.org']
-    custom_settings = {
-        'JOBDIR': '/opt/scrapyd/jobs/opensuse-mails/'
-    }
     rules = (
         #Defining rules for the crawler, if the link match the regex defined in 'allow' section, then the link will be opened and thrown to the callback function
         Rule(LinkExtractor(allow=('msg\d{5}\.html', )), callback='parse_item', follow=False),

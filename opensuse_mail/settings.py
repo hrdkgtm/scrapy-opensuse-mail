@@ -14,6 +14,7 @@ BOT_NAME = 'opensuse_mail'
 SPIDER_MODULES = ['opensuse_mail.spiders']
 NEWSPIDER_MODULE = 'opensuse_mail.spiders'
 
+JOBDIR = './jobs'
 FEED_FORMAT = 'jsonlines'
 
 
