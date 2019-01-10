@@ -88,7 +88,7 @@ JOBDIR = '/opt/scrapyd/jobs'
 ...
 ```
 
-If you want the crawler to actively checks for changes, theres a separate [project](https://gitlab.s8i.io/hrdkgtm/scrapyd-opensuse-mail) that wraps everything to a bash script and systemd unit files. 
+If you want the crawler to actively checks for changes, theres a separate [project](https://gitlab.s8i.io/hrdkgtm/scrapyd-opensuse-scheduler) that wraps everything to a bash script and systemd unit files. 
 
 ## Built With
 
