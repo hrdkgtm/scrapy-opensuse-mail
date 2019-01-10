@@ -80,9 +80,15 @@ version = 1.0.0
 
 Change the [deploy] section to match your scrapyd server.
 
-If you want the crawler to actively checks for changes, theres a separate [project](https://gitlab.s8i.io/hrdkgtm/scrapyd-opensuse) that wraps everything to a bash script and systemd unit files. 
+You may also want to change the spider settings, as in it current form, the jobs directory will be stored inside the spider. To make it more accessible you can change the `JOBSDIR` parameter inside the spider [settings](opensuse_mail/settings.py) into your preferred jobs directory (e.g. `/opt/scrapyd/jobs/`)
 
+```
+...
+JOBDIR = '/opt/scrapyd/jobs'
+...
+```
 
+If you want the crawler to actively checks for changes, theres a separate [project](https://gitlab.s8i.io/hrdkgtm/scrapyd-opensuse-mail) that wraps everything to a bash script and systemd unit files. 
 
 ## Built With
 
