@@ -101,3 +101,9 @@ Semantic Versioning
 ## License
 
 This project is licensed under the Apache License 2.0 - see the LICENSE.md file for details
+
+## Reference Documentation
+
+[Scrapy 1.5 documentation](https://doc.scrapy.org/en/latest/index.html)
+
+[BeautifulSoup4 Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
