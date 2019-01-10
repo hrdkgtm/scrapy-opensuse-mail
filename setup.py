@@ -7,7 +7,4 @@ setup(
     version      = '1.0',
     packages     = find_packages(),
     entry_points = {'scrapy': ['settings = opensuse_mail.settings']},
-    install_requires = [
-        'bs4'
-    ]
 )
