@@ -6,6 +6,8 @@ bugs.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+opensuse_mail/*/*.py[cod]
+opensuse_mail/spiders/*/*.py[cod]
 
 # C extensions
 *.so
