@@ -64,9 +64,23 @@ Here are all the fields that this spider will parse
 
 ## Deployment
 
-For production use, ideally you would have a `scrapyd` server running somewhere, and then you can deploy this project to that server using `scrapyd-deploy` which can be run from inside the project.
+Extra requirements for deployment to a live system :
 
-`scrapy.cfg` is the file to configure if you are going to deploy this to a live environment. which looks like this and very straightforward
+- scrapyd-client == 1.1.0
+
+Ideally You should have a `scrapyd` server running somewhere, and then You can deploy this project to that server using `scrapyd-deploy` which comes from the `scrapyd-client` package. You can install it using pip, and then run it from inside the project directory
+
+```
+$ pip install --user scrapyd-client==1.1.0
+$ cd scrapy-opensuse-mail
+$ scrapyd-deploy
+Packing version 0.1.0
+Deploying to project "opensuse_mail" in http://localhost:6800/addversion.json
+Server response (200):
+{"node_name": "testserver", "status": "ok", "project": "opensuse_mail", "version": "0.1.0", "spiders": 1}
+```
+
+`scrapyd-deploy` will deploy the project to a scrapyd server that is configured inside `scrapy.cfg`. Which the contents of the file is pretty straightforward
 
 ```
 [settings]
@@ -75,7 +89,7 @@ default = opensuse_mail.settings
 [deploy]
 url = http://localhost:6800/
 project = opensuse_mail
-version = 1.0.0
+version = 0.1.0
 ```
 
 Change the [deploy] section to match your scrapyd server.
